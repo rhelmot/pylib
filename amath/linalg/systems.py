@@ -4,6 +4,8 @@ import numbers
 
 class row:
 	def __init__(self, *args):
+		if len(args) == 1 and 'items' in args[0]:
+			self.items = args[0].items
 		if len(args) == 1 and isinstance(args[0], str):
 			self.items = map(qnum, args[0].replace(',',' ').translate(None, '[](){}').split())
 		elif len(args) == 1 and isinstance(args[0], list):

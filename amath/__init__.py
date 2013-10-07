@@ -20,4 +20,4 @@ def qnum(a=0, b=1):
 		return Fraction(a,b)
 
 
-import linalg
+import linalg, vectors
