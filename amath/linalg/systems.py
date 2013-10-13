@@ -123,6 +123,7 @@ class system:
 					if self.rows[trow][col] != 0:
 						break
 				self.rowop_swap(row, trow)
+				continue
 			trow = row
 			while True:
 				trow += 1
@@ -136,6 +137,8 @@ class system:
 		while row < len(self.rows) and col < len(self.rows[0]):
 			while col < len(self.rows[0]) and self.rows[row][col] == 0:
 				col += 1
+			if col >= (len(self.rows[0]) - 1):
+				break
 			yield (row, col)
 			row += 1
 
@@ -158,7 +161,7 @@ class system:
 					its.append(str(self.rows[row][-1]))
 				for tcol in range(col+1, len(self.rows[0]) - 1):
 					if not self.rows[row][tcol] == 0:
-						its.append(str(self.rows[row][tcol]) + 'x' + str(tcol+1))
+						its.append(str(-1*self.rows[row][tcol]) + 'x' + str(tcol+1))
 				out['x' + str(col+1)] = printing.formatsum(its)
 				row += 1
 			elif self.rows[row][col] == 0:

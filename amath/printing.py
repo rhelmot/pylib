@@ -16,4 +16,4 @@ def formatsum(items):
 				out += i
 			else:
 				out += ' + ' + i
-	return out
+	return out if not out=='' else '0'
