@@ -89,9 +89,10 @@ class system:
 		self.rows[row2] = swap
 
 	def rowop_add(self, destrow, srcrow, factor=1):
+		tfactor = qnum(factor)
 		if destrow >= len(self.rows) or srcrow >= len(self.rows) or destrow < 0 or srcrow < 0:
 			raise ValueError('Row number out of bounds')
-		self.rows[destrow] += self.rows[srcrow]*factor
+		self.rows[destrow] += self.rows[srcrow]*tfactor
 
 	def column(self, colnum):
 		if colnum >= len(self.rows[0]) or colnum < 0:

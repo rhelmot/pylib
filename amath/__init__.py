@@ -5,6 +5,8 @@ prec = 4
 
 def qnum(a=0, b=1):
 	if isinstance(a, str):
+		if '/' in a:
+			return Fraction(a)
 		a = Decimal(a)
 	if isinstance(b, str):
 		b = Decimal(b)
